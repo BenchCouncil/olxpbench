@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://10.118.0.28:4000/tabenchmark?useSSL=false</DBUrl>
+    <username>root</username>
+    <password></password>
+    <isolation>TRANSACTION_SERIALIZABLE</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+        
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>50</scalefactor>
+    
+    <!-- The workload -->
+    <oltpTerminals>24</oltpTerminals>
+    <olapTerminals>4</olapTerminals>
+    <olxpTerminals>16</olxpTerminals>
+    <works>
+        <work>
+            <time>50</time>
+            <rate workloadType="oltp">100</rate>
+            <weights workloadType="oltp">2, 35, 10, 35, 2, 14, 2</weights>
+          <rate workloadType="olap">100</rate>
+          <weights workloadType="olap">20, 20, 20, 20, 20</weights>
+          <rate workloadType="olxp">100</rate>
+          <weights workloadType="olxp">2, 15, 28, 15, 20, 20</weights>
+        </work>
+    </works>
+  
+	<!-- Twitter Procedures declaration -->
+    <transactiontypes workloadType="oltp">
+        <transactiontype>
+                <name>DeleteCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetAccessData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetNewDestination</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetSubscriberData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateLocation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateSubscriberData</name>
+        </transactiontype>
+    </transactiontypes>
+           <transactiontypes workloadType="olap">
+           <transactiontype>
+                   <name>Q1</name>
+           </transactiontype>
+           <transactiontype>
+                   <name>Q2</name>
+           </transactiontype>
+           <transactiontype>
+                   <name>Q3</name>
+           </transactiontype>
+           <transactiontype>
+                   <name>Q4</name>
+           </transactiontype>
+           <transactiontype>
+                   <name>Q5</name>
+           </transactiontype>
+           </transactiontypes>
+     <transactiontypes workloadType="olxp">
+     <transactiontype>
+             <name>X1</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X2</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X3</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X4</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X5</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X6</name>
+     </transactiontype>
+     </transactiontypes>
+
+</parameters>

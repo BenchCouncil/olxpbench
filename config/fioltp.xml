@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://ip:4000/fibenchmark?useSSL=false</DBUrl>
+    <username>root</username>
+    <password></password>
+    <isolation>TRANSACTION_REPEATABLE_READ</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+        
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>1</scalefactor>
+    
+    <!-- The workload -->
+    <oltpTerminals>128</oltpTerminals>
+    <works>
+        <work>
+            <warmup>60</warmup>
+            <time>240</time>
+            <rate workloadType="oltp">2000</rate>
+            <weights workloadType="oltp">15, 15, 15, 25, 15, 15</weights>
+        </work>
+    </works>
+  
+    <transactiontypes workloadType="oltp">
+        <transactiontype>
+                <name>Amalgamate</name>
+        </transactiontype>
+        <transactiontype>
+                <name>Balance</name>
+        </transactiontype>
+        <transactiontype>
+                <name>DepositChecking</name>
+        </transactiontype>
+        <transactiontype>
+                <name>SendPayment</name>
+        </transactiontype>
+        <transactiontype>
+                <name>TransactSavings</name>
+        </transactiontype>
+        <transactiontype>
+                <name>WriteCheck</name>
+        </transactiontype>
+    </transactiontypes>
+
+</parameters>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<plugins>
+    <plugin name="subenchmark">com.olxpbenchmark.benchmarks.subenchmark.SUBenchmark</plugin>
+    <plugin name="fibenchmark">com.olxpbenchmark.benchmarks.fibenchmark.FIBenchmark</plugin>
+    <plugin name="tabenchmark">com.olxpbenchmark.benchmarks.tabenchmark.TABenchmark</plugin>
+</plugins>

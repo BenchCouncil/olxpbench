@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://ip:4000/tabenchmark?useSSL=false</DBUrl>
+    <username>root</username>
+    <password></password>
+    <isolation>TRANSACTION_REPEATABLE_READ</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+        
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>1</scalefactor>
+    
+    <!-- The workload -->
+    <oltpTerminals>8</oltpTerminals>
+    <works>
+        <work>
+            <warmup>60</warmup>
+            <time>240</time>
+            <rate workloadType="oltp">50</rate>
+            <weights workloadType="oltp">2, 35, 10, 35, 2, 14, 2</weights>
+        </work>
+    </works>
+  
+    <transactiontypes workloadType="oltp">
+        <transactiontype>
+                <name>DeleteCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetAccessData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetNewDestination</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetSubscriberData</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertCallForwarding</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateLocation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateSubscriberData</name>
+        </transactiontype>
+    </transactiontypes>
+
+</parameters>

@@ -1,0 +1,58 @@
+/*
+ * Copyright 2021 OLxPBench
+
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+
+ *  http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+
+ */
+
+package com.olxpbenchmark.benchmarks.subenchmark.procedures.olap;
+
+import com.olxpbenchmark.api.SQLStmt;
+import com.olxpbenchmark.benchmarks.subenchmark.procedures.olap.GenericQuery;
+import com.olxpbenchmark.util.RandomGenerator;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Q2 extends GenericQuery {
+
+    public final SQLStmt query_stmt = new SQLStmt(
+            "select OL_O_ID, OL_D_ID, OL_W_ID, sum(OL_AMOUNT) AS revenue, O_ENTRY_D "
+            + "FROM CUSTOMER, NEW_ORDER, OORDER, ORDER_LINE "
+            + "WHERE C_STATE LIKE 'A%' "
+            + "AND C_ID = O_C_ID "
+            + "AND C_W_ID=O_W_ID "
+            + "AND C_D_ID=O_D_ID "
+            + "AND NO_W_ID=O_W_ID "
+            + "AND NO_D_ID=O_D_ID "
+            + "AND NO_O_ID=O_ID "
+            + "AND OL_W_ID=O_W_ID "
+            + "AND OL_D_ID=O_D_ID "
+            + "AND OL_O_ID=O_ID "
+            + "AND O_ENTRY_D > '2007-01-02 00:00:00.000000' "
+            + "GROUP BY OL_O_ID, OL_W_ID, OL_D_ID, O_ENTRY_D "
+            + "ORDER BY REVENUE DESC , O_ENTRY_D "
+
+    );
+
+    @Override
+    protected PreparedStatement getStatement(Connection conn, RandomGenerator rand) throws SQLException {
+        PreparedStatement stmt = this.getPreparedStatement(conn, query_stmt);
+        // Fix it!
+        //stmt.setString(1, delta);
+        return stmt;
+    }
+}
+
+

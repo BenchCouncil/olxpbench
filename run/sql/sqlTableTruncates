@@ -1,0 +1,18 @@
+
+delete warehouse;
+
+delete item;
+
+delete stock;
+
+delete district;
+
+delete customer;
+
+delete history;
+
+delete oorder;
+
+delete order_line;
+
+delete new_order;

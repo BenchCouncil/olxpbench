@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://ip:4000/fibenchmark?useSSL=false</DBUrl>
+    <username>root</username>
+    <password></password>
+    <isolation>TRANSACTION_READ_COMMITTED</isolation>
+    <uploadCode></uploadCode>
+    <uploadUrl></uploadUrl>
+        
+    <!-- Scalefactor increases the number of subscribers -->
+    <scalefactor>1</scalefactor>
+    
+    <!-- The workload -->
+    <olxpTerminals>8</olxpTerminals>
+    <works>
+        <work>
+	    <warmup>60</warmup>
+            <time>240</time>
+          <rate workloadType="olxp">10</rate>
+          <weights workloadType="olxp">20, 20, 20, 20, 10, 10</weights>
+        </work>
+    </works>
+  
+     <transactiontypes workloadType="olxp">
+     <transactiontype>
+             <name>X1</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X2</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X3</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X4</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X5</name>
+     </transactiontype>
+     <transactiontype>
+             <name>X6</name>
+     </transactiontype>
+     </transactiontypes>
+
+</parameters>
