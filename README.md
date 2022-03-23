@@ -9,6 +9,7 @@ Together with the framework we provide the following HTAP benchmarks:
 
 + Java (+1.7)
 + Apache Ant
++ Ubuntu (+16.04)
 
 ## Download
  + git clone https://github.com/EVERYGO111/olxpbench.git
