@@ -12,7 +12,7 @@ Together with the framework we provide the following HTAP benchmarks:
 + Ubuntu (+16.04)
 
 ## Download
- + git clone https://github.com/EVERYGO111/olxpbench.git
+ + git clone https://github.com/BenchCouncil/olxpbench
 
 ## Quick start
 + ant bootstrap
