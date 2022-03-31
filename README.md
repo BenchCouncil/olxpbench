@@ -41,7 +41,8 @@ MySQLSyntaxErrorException:this is incompatible with sql_mode=only_full_group_by
 
 ## Publications
 If you use OLxPBench for your paper, please cite the follow paper:
-OLxPBench: Real-time, Semantically Consistent, and Domain-specific are Essential in Benchmarking, Designing, and Implementing HTAP Systems (ICDE 2022)
+
+[OLxPBench: Real-time, Semantically Consistent, and Domain-specific are Essential in Benchmarking, Designing, and Implementing HTAP Systems](chrome-extension://ieepebpjnkhaiioojkepfniodjmjjihl/data/pdf.js/web/viewer.html?file=https%3A%2F%2Farxiv.org%2Fpdf%2F2203.16095.pdf). ICDE 2022.
 
 @misc{2203.16095,
 Author = {Guoxin Kang and Lei Wang and Wanling Gao and Fei Tang and Jianfeng Zhan},
