@@ -4,7 +4,7 @@ Together with the framework we provide the following HTAP benchmarks:
   * Subenchmark
   * Fibenchmark
   * Tabenchmark
-
+  
 ## Dependencies
 
 + Java (+1.7)
@@ -39,3 +39,13 @@ java.sql.SQLException: Write conflict
 MySQLSyntaxErrorException:this is incompatible with sql_mode=only_full_group_by
 + set @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 
+## Publications
+If you use OLxPBench for your paper, please cite the follow paper:
+OLxPBench: Real-time, Semantically Consistent, and Domain-specific are Essential in Benchmarking, Designing, and Implementing HTAP Systems (ICDE 2022)
+
+@misc{2203.16095,
+Author = {Guoxin Kang and Lei Wang and Wanling Gao and Fei Tang and Jianfeng Zhan},
+Title = {OLxPBench: Real-time, Semantically Consistent, and Domain-specific are Essential in Benchmarking, Designing, and Implementing HTAP Systems},
+Year = {2022},
+Eprint = {arXiv:2203.16095},
+}
