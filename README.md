@@ -27,17 +27,6 @@ The ./config directory provides all configure files.
 + ./olxpbenchmark -b subenchmark -c config/suoltp.xml -wt oltp --create=true --load=true
 + ./olxpbenchmark -b subenchmark -c config/suoltp.xml -wt oltp --execute=true -o results/suoltp
 
-## Troubles with TiDB
-isolation level error
-+ set GLOBAL tidb_skip_isolation_level_check = 1
-
-
-java.sql.SQLException: Write conflict
-+ SET GLOBAL tidb_txn_mode = 'pessimistic';
-
-
-MySQLSyntaxErrorException:this is incompatible with sql_mode=only_full_group_by
-+ set @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 
 ## Publications
 If you use OLxPBench for your paper, please cite the follow paper:
@@ -50,3 +39,16 @@ Title = {OLxPBench: Real-time, Semantically Consistent, and Domain-specific are 
 Year = {2022},
 Eprint = {arXiv:2203.16095},
 }
+
+## Troubles with TiDB
+isolation level error
++ set GLOBAL tidb_skip_isolation_level_check = 1
+
+
+java.sql.SQLException: Write conflict
++ SET GLOBAL tidb_txn_mode = 'pessimistic';
+
+
+MySQLSyntaxErrorException:this is incompatible with sql_mode=only_full_group_by
++ set @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
